@@ -6,11 +6,15 @@ import exceptions.SchoolNotFoundException;
 import models.School;
 
 import java.util.List;
+//todo: http/: readme.so
+//todo: codeburst.io/solid-design-principle-usingswift-fa67443672b8
 
-public class Schoo lServiceImpl implements SchoolService{
-    private SchoolDb schoolDb;
+public class SchoolServiceImpl implements SchoolService{
+    private final SchoolDb schoolDb;
 
-
+public SchoolServiceImpl(SchoolDb schoolDb){
+    this.schoolDb = schoolDb;
+}
     @Override
     public void add(School school) {
         schoolDb.add(school);
@@ -41,5 +45,12 @@ public class Schoo lServiceImpl implements SchoolService{
     @Override
     public List<School> getAll() {
         return schoolDb.getAll();
+    }
+
+    @Override
+    public void addAll(School ...school){
+        for(School sch: school){
+            schoolDb.add(sch);
+        }
     }
 }

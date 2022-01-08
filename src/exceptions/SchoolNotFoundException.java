@@ -1,7 +1,7 @@
 package exceptions;
 
 public class SchoolNotFoundException extends Throwable {
-//    delete the method formed by intellige and right click, then go to generate ,then click override method.
+//    delete the method formed by intelligent and right click, then go to generate ,then click override method.
     public SchoolNotFoundException() {
         super();
     }
